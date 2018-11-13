@@ -13,8 +13,8 @@
   "author": "Max Stoiber",
   "license": "MIT",
   "scripts": {
-    "deploy":"aws s3 sync build/ s3://react-boilerplate-serverless",
-    "set-policy":"aws s3api put-bucket-policy --bucket react-boilerplate-serverless --policy file://policy.json",
+    "deploy": "aws s3 sync build/ s3://react-boilerplate-serverless",
+    "set-policy": "aws s3api put-bucket-policy --bucket react-boilerplate-serverless --policy file://policy.json",
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./internals/scripts/analyze.js",
@@ -114,6 +114,7 @@
     "babel-plugin-styled-components": "1.8.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.19",
     "circular-dependency-plugin": "5.0.2",
+    "claudia": "^5.1.2",
     "compare-versions": "3.4.0",
     "compression-webpack-plugin": "2.0.0",
     "coveralls": "3.0.2",
