@@ -14,7 +14,8 @@
   "license": "MIT",
   "scripts": {
     "deploy": "aws s3 sync build/ s3://react-boilerplate-serverless",
-    "set-policy": "aws s3api put-bucket-policy --bucket react-boilerplate-serverless --policy file://policy.json",
+    "set-policy": "aws s3api put-bucket-policy --bucket react-boilerplate-serverless --policy file://./aws-scripts/policy.json",
+    "create:serverless": "node ./aws-scripts/pre-deploy.js && claudia generate-serverless-express-proxy --express-module build/express",
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./internals/scripts/analyze.js",
@@ -62,6 +63,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.0.0",
+    "aws-serverless-express": "^3.3.5",
     "chalk": "2.4.1",
     "compression": "1.7.3",
     "connected-react-router": "4.5.0",
