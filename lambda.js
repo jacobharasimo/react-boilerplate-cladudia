@@ -1,5 +1,5 @@
 const awsServerlessExpress = require('aws-serverless-express');
-const app = require('./build/express');
+const app = require('./dist/express');
 const binaryMimeTypes = [
   'application/javascript',
   'application/octet-stream',

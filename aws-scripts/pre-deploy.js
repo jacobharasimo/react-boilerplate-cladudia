@@ -9,3 +9,12 @@ fs.copyFile(
     console.log('file copied');
   },
 );
+
+fs.copyFile(
+  resolve('./aws-scripts/express.local.js'),
+  resolve('./build/express.local.js'),
+  err => {
+    if (err) throw err;
+    console.log('file copied');
+  },
+);
